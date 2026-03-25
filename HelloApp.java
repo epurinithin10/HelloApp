@@ -8,20 +8,16 @@ public class HelloApp {
             return;
         }
 
-        // Case 2: Multiple names using enhanced for loop
         StringBuilder nameBuilder = new StringBuilder();
-        boolean first = true;
 
+        // Enhanced for loop
         for (String name : args) {
-
-            if (!first) {
-                nameBuilder.append(", ");
-            }
-
-            nameBuilder.append(name);
-            first = false;
+            nameBuilder.append(name).append(", ");
         }
 
-        System.out.println("Hello, " + nameBuilder + "!");
+        // Remove trailing ", "
+        String result = nameBuilder.substring(0, nameBuilder.length() - 2);
+
+        System.out.println("Hello, " + result + "!");
     }
 }
